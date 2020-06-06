@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { usePersistedState } from '../Hooks/customHooks';
 
 function ProductCard(props) {
+    const [isFav, setFav] = usePersistedState(props.id, false)
     return (
+
         <div className="border mb-4 rounded overflow-hidden">
             {/* <Link to={`/products/${props.product.sku}`}> */}
             <div style={{
                 'backgroundImage': `url('${props.product.imgSrc}')`,
                 'height': '120px',
                 'width': '120px'
-                
+
             }}
                 className="w-full h-64 bg-blue bg-cover"
             >
@@ -39,6 +42,11 @@ function ProductCard(props) {
                 >
                     View
                 </a>
+                <div>{props.product.sku}</div>
+
+                <div>{props.id}</div>
+                <div onClick={() => { setFav(!isFav) }}> favorite ` ${isFav} ggg`</div>
+
             </div>
         </div>
     )

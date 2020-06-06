@@ -9,6 +9,7 @@ import Footer from './Components/Footer'
 import Home from './Modules/Home/Home'
 import About from './Modules/About/About'
 // import Product from './Modules/Product'
+import ErrorBoundary from './ErrorBoundary';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Footer />
       </Router>
     </div>
+   
   );
 }
 

@@ -29,10 +29,11 @@ function Home() {
 
     if (products.data.length > 0) {
         console.log(products)
-        content = products.data.map((product) =>
-            <div key={product.sku} className="productCard">
+        content = products.data.map((product, index) =>
+            <div key={product.sku + index} className="productCard">
                 <ProductCard
                     product={product}
+                    id={product.sku + index}
                 />
             </div>
         )

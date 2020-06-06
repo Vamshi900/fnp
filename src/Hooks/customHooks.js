@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback, useRef, useState } from 'react';
 import axios from 'axios';
 
 // make API calls and pass the returned data via dispatch
@@ -18,7 +18,7 @@ export const useFetch = (data, dispatch) => {
           })
           dispatch({
             type: 'FETCHING_PRODUCTS',
-            loading: false, 
+            loading: false,
             error: false
           })
         })
@@ -87,4 +87,26 @@ export const useLazyLoading = (productSelector, items) => {
       productsRef.current.forEach(product => productObserver(product));
     }
   }, [productObserver, productsRef, productSelector, items])
+}
+
+// favourite storage hook
+
+// function usePersistedState(key, defaultValue) {
+//   const [state, setState] = React.useState(
+//     () => JSON.parse(localStorage.getItem(key)) || defaultValue
+//   );
+//   useEffect(() => {
+//     localStorage.setItem(key, JSON.stringify(state));
+//   }, [key, state]);
+//   return [state, setState];
+// }
+export const usePersistedState = (key, defaultValue) => {
+  const [state, setState] = useState(() => {
+    const persistedState = localStorage.getItem(key);
+    return persistedState ? JSON.parse(persistedState) : defaultValue;
+  });
+  useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(state));
+  }, [state, key]);
+  return [state, setState];
 }

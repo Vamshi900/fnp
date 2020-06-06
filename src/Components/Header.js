@@ -10,7 +10,7 @@ function Header() {
             </Link>
             <Navigation />
             <span className="font-bold">
-                <img src="https://i7.fnp.com/assets/images/new-fnplogo.png" />
+                <img alt="fernsnpetals" src="https://i7.fnp.com/assets/images/new-fnplogo.png" />
             </span>
 
         </header>

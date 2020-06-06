@@ -7,6 +7,9 @@ function ProductCard(props) {
             {/* <Link to={`/products/${props.product.sku}`}> */}
             <div style={{
                 'backgroundImage': `url('${props.product.imgSrc}')`,
+                'height': '120px',
+                'width': '120px'
+                
             }}
                 className="w-full h-64 bg-blue bg-cover"
             >

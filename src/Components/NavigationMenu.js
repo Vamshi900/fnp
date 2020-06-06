@@ -17,15 +17,26 @@ function NavigationMenu(props){
                         Home
                     </Link>
                 </li>
+                
                 <li>
                     <Link 
                         to="/about" 
                         className="text-blue-500 py-3 border-b block"
                         onClick={props.closeMenu}
                     >
-                        About
+                        About Us
                     </Link>
                 </li>
+                <li>
+                  
+                        Cakes
+                  
+                </li>
+                <li>
+                  
+                  Flowers
+            
+          </li>
             </ul>
         </div>
     )

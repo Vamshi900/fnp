@@ -9,11 +9,9 @@ import Footer from './Components/Footer'
 import Home from './Modules/Home/Home'
 import About from './Modules/About/About'
 // import Product from './Modules/Product'
-import ErrorBoundary from './ErrorBoundary';
 
 function App() {
   return (
-    <div className="relative pb-10 min-h-screen">
       <Router>
         <Header />
         <div className="p-3">
@@ -28,7 +26,6 @@ function App() {
         </div>
         <Footer />
       </Router>
-    </div>
    
   );
 }

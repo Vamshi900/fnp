@@ -4,7 +4,6 @@ import axios from 'axios';
 // make API calls and pass the returned data via dispatch
 export const useFetch = (data, dispatch) => {
   const url = `http://www.mocky.io/v2/5ed68221340000480106dae9​`;
-  // const url = `http://www.mocky.io/v2/5ed68221340000480106vdsfvsdae9​`;
 
   useEffect(() => {
     dispatch({ type: 'FETCHING_PRODUCTS', loading: true, error: false })
@@ -89,18 +88,10 @@ export const useLazyLoading = (productSelector, items) => {
   }, [productObserver, productsRef, productSelector, items])
 }
 
-// favourite storage hook
-
-// function usePersistedState(key, defaultValue) {
-//   const [state, setState] = React.useState(
-//     () => JSON.parse(localStorage.getItem(key)) || defaultValue
-//   );
-//   useEffect(() => {
-//     localStorage.setItem(key, JSON.stringify(state));
-//   }, [key, state]);
-//   return [state, setState];
-// }
+// local storage hook 
+//TODO : should improve this
 export const usePersistedState = (key, defaultValue) => {
+
   const [state, setState] = useState(() => {
     const persistedState = localStorage.getItem(key);
     return persistedState ? JSON.parse(persistedState) : defaultValue;

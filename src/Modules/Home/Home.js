@@ -4,7 +4,7 @@ import ProductCard from '../../Components/ProductCard'
 import { pageReducer, productReducer } from './data/reducer';
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../Hooks/customHooks'
 
-
+import './home.css';
 function Home() {
     let content = null
     let bottomBoundaryRef = useRef(null);
@@ -28,7 +28,6 @@ function Home() {
     }
 
     if (products.data.length > 0) {
-        console.log(products)
         content = products.data.map((product, index) =>
             <div key={product.sku + index} className="productCard">
                 <ProductCard
@@ -44,7 +43,7 @@ function Home() {
             <h1 className="font-bold text-2xl mb-3">
                 Best Sellers
             </h1>
-            <div className="md:flex flex-wrap md:-mx-3">
+            <div className="cardWrapper">
                 {content}
             </div>
             <div id='page-bottom-boundary' style={{ border: '1px solid red' }} ref={bottomBoundaryRef}></div>

@@ -41,6 +41,12 @@ font-size: 30px;
     transition: all 0.25s ease-in-out 0s;
     background: rgb(255, 255, 255);`
     ;
+const PageBottomBound = styled.div`
+    border: 1px solid #fff;
+    height: 10px;
+    background: #fff;
+    width: 100%;`;
+
 function Home() {
     let content = null
     let bottomBoundaryRef = useRef(null);
@@ -79,7 +85,7 @@ function Home() {
             <ProductList className="cardWrapper">
                 {content}
             </ProductList>
-            <div id='page-bottom-boundary' style={{ border: '1px solid red' }} ref={bottomBoundaryRef}></div>
+            <PageBottomBound id='page-bottom-boundary'  ref={bottomBoundaryRef}></PageBottomBound>
         </HomeContainer>
     )
 }

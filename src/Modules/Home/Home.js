@@ -54,7 +54,7 @@ function Home() {
 
     if (products.error) {
         content = <div>
-            <div className="bg-red-300 p-3">
+            <div className="">
                 There was an error please refresh or try again later.
             </div>
         </div>

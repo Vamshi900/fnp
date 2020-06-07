@@ -45,4 +45,12 @@ export const CardImage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;`;
+    
+    export const Reviews = styled.span`
+    margin-left:10px
+    `;
+   export const CardTitleText = styled.h3`
+   
+   font-size:15px
+   margin: 0;`;
 

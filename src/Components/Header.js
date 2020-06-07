@@ -42,6 +42,8 @@ line-height: 20px;
 
 const Image = styled.img`
 max-width: 100%;
+width:110px;
+margin-left:10px;
 border-style: none;
 `;
 
@@ -51,9 +53,9 @@ function Header() {
         <HeaderDiv id="header">
             <GridContainer>
                 <Navigation />
-                {/* <Link to="/" >
-                    <Logo>  <Image  alt="fernsnpetals" src="https://i7.fnp.com/assets/images/new-fnplogo.png" /> </Logo>
-                </Link> */}
+                <Link to="/" >
+                    <Image alt="fernsnpetals" src="https://m-i7.fnp.com/assets/images/logo-bb.png" />
+                </Link>
             </GridContainer>
         </HeaderDiv>
     )

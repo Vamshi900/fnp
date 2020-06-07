@@ -7,6 +7,18 @@ import styled from 'styled-components';
 import { BestSeller, FavIcon, Tag, CardImage, Content, DiscountPercent, OfferWrapper, ActualPrice, Reviews, CardTitleText } from './ProductCard.styled';
 
 const StyledProductCard = styled.div`
+@media (min-width: 40em) {
+    &.card {
+       max-width: calc(50% -  1em);
+    }
+    max-width: calc(50% -  1em);
+}
+
+@media (min-width: 60em) {
+    &.card {
+        max-width: calc(25% - 1em);
+    }
+    max-width: calc(50% -  1em);
  position:relative;
  background-color: #f1f1f1;
 flex: 0 1 calc(25% - 1em);
@@ -14,14 +26,16 @@ flex: 0 1 calc(25% - 1em);
     border-radius: 4px;
     margin: 0px 0.8% 0.8% 0px;
     transition: all 0.25s ease-in-out 0s;
-    calc(25% - 1em)
+
+
+        
    `;
 
 
 function ProductCard(props) {
     const [isFav, setFav] = usePersistedState(props.id, false)
     return (
-        <StyledProductCard>
+        <StyledProductCard className='card'>
             <Tag className='tag'>
                 {props.product.bestSeller ? <BestSeller className='bestSeller'>BEST SELLER</BestSeller> : null}
 

@@ -13,6 +13,8 @@ const HomeContainer = styled.div`
     flex-wrap: wrap;
     margin: 3rem 0rem;
     flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0;
 `;
 const ProductList = styled.div`
 display: flex;
@@ -85,7 +87,7 @@ function Home() {
             <ProductList className="cardWrapper">
                 {content}
             </ProductList>
-            <PageBottomBound id='page-bottom-boundary'  ref={bottomBoundaryRef}></PageBottomBound>
+            <PageBottomBound id='page-bottom-boundary' ref={bottomBoundaryRef}></PageBottomBound>
         </HomeContainer>
     )
 }

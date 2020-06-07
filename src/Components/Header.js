@@ -51,9 +51,9 @@ function Header() {
         <HeaderDiv id="header">
             <GridContainer>
                 <Navigation />
-                <Link to="/" >
+                {/* <Link to="/" >
                     <Logo>  <Image  alt="fernsnpetals" src="https://i7.fnp.com/assets/images/new-fnplogo.png" /> </Logo>
-                </Link>
+                </Link> */}
             </GridContainer>
         </HeaderDiv>
     )

@@ -3,8 +3,44 @@ import Loader from '../../Components/Loader'
 import ProductCard from '../../Components/ProductCard'
 import { pageReducer, productReducer } from './data/reducer';
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../Hooks/customHooks'
+import styled from 'styled-components';
 
-import './home.css';
+
+const HomeContainer = styled.div`
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 3rem 0rem;
+    flex-grow: 1;
+`;
+const ProductList = styled.div`
+display: flex;
+-webkit-box-pack: start;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
+`;
+const ListItem = styled.li`
+display: inline-block;
+    width: calc(24.25%);
+    margin: 0px 0.8% 0.8% 0px;`;
+
+const StyledProductCard = styled(ProductCard)`
+background-color: #f1f1f1;
+width: 100px;
+margin: 10px;
+text-align: center;
+line-height: 75px;
+font-size: 30px;
+    display: flex;
+    min-height: 351px;
+    padding: 6px;
+    border-radius: 4px;
+    margin: 0px 0.8% 0.8% 0px;
+    transition: all 0.25s ease-in-out 0s;
+    background: rgb(255, 255, 255);`
+    ;
 function Home() {
     let content = null
     let bottomBoundaryRef = useRef(null);
@@ -29,25 +65,22 @@ function Home() {
 
     if (products.data.length > 0) {
         content = products.data.map((product, index) =>
-            <div key={product.sku + index} className="productCard">
-                <ProductCard
-                    product={product}
-                    id={product.sku + index}
-                />
-            </div>
+            <ProductCard
+                product={product}
+                id={product.sku + index}
+            ></ProductCard>
+
         )
     }
 
     return (
-        <div className="container mx-auto">
-            <h1 className="font-bold text-2xl mb-3">
-                Best Sellers
-            </h1>
-            <div className="cardWrapper">
+        <HomeContainer>
+
+            <ProductList className="cardWrapper">
                 {content}
-            </div>
+            </ProductList>
             <div id='page-bottom-boundary' style={{ border: '1px solid red' }} ref={bottomBoundaryRef}></div>
-        </div>
+        </HomeContainer>
     )
 }
 

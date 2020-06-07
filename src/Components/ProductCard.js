@@ -1,14 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { usePersistedState } from '../Hooks/customHooks';
 import StarRatings from 'react-star-ratings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import styled from 'styled-components';
+
+const StyledProductCard = styled.div`
+background-color: #f1f1f1;
+flex: 0 1 calc(25% - 1em);
+    padding: 6px;
+    border-radius: 4px;
+    margin: 0px 0.8% 0.8% 0px;
+    transition: all 0.25s ease-in-out 0s;
+    calc(25% - 1em)
+   `;
 
 function ProductCard(props) {
     const [isFav, setFav] = usePersistedState(props.id, false)
     return (
-        <>
+        <StyledProductCard>
             <div className='tag'>
                 {props.product.bestSeller ? <span className='bestSeller'>BEST SELLER</span> : null}
 
@@ -58,7 +68,7 @@ function ProductCard(props) {
                     <span>{props.product.reviewCount} reviews</span>
                 </div>
             </a>
-        </>
+        </StyledProductCard>
     )
 }
 

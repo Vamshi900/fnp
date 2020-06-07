@@ -4,9 +4,11 @@ import StarRatings from 'react-star-ratings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
+import { BestSeller, FavIcon, Tag,CardImage, Content} from './ProductCard.styled';
 
 const StyledProductCard = styled.div`
-background-color: #f1f1f1;
+ position:realtive;
+ background-color: #f1f1f1;
 flex: 0 1 calc(25% - 1em);
     padding: 6px;
     border-radius: 4px;
@@ -15,20 +17,21 @@ flex: 0 1 calc(25% - 1em);
     calc(25% - 1em)
    `;
 
+
 function ProductCard(props) {
     const [isFav, setFav] = usePersistedState(props.id, false)
     return (
         <StyledProductCard>
-            <div className='tag'>
-                {props.product.bestSeller ? <span className='bestSeller'>BEST SELLER</span> : null}
+            <Tag className='tag'>
+                {props.product.bestSeller ? <BestSeller className='bestSeller'>BEST SELLER</BestSeller> : null}
 
-                <div onClick={() => { setFav(!isFav) }}>  <FontAwesomeIcon
+                <FavIcon onClick={() => { setFav(!isFav) }}>  <FontAwesomeIcon
                     icon={faHeart}
                     onClick={() => setFav(!isFav)}
-                /></div>
-            </div>
+                /></FavIcon>
+            </Tag>
             <a href={`${props.product.landingPage}`} target={'_blank'} className="styledCard">
-                <span style={{
+                <CardImage style={{
                     'backgroundImage': `url('${props.product.imgSrc}')`,
                     'display': 'flex',
                     'flex-direction': 'column',
@@ -41,8 +44,8 @@ function ProductCard(props) {
                 }}
                     className="w-full h-64 bg-blue bg-cover"
                 >
-                </span>
-                <div className="p-3">
+                </CardImage>
+                <Content className="p-3">
                     <h3 className="font-bold text-xl mb-3">
                         {props.product.title}
 
@@ -51,7 +54,7 @@ function ProductCard(props) {
                         {
                             props.product.discountPercentage ? <span> ₹ {Math.round(props.product.sellingPrice * ((100 - props.product.discountPercentage) / 100))} </span> : <span>₹  {props.product.sellingPrice}</span>
 
-}
+                        }
                     </div>
                     {
                         props.product.discountPercentage ? <div className='actualPrice'>₹ {props.product.sellingPrice} </div> : null
@@ -66,7 +69,7 @@ function ProductCard(props) {
                         starSpacing="3px"
                     />
                     <span>{props.product.reviewCount} reviews</span>
-                </div>
+                </Content>
             </a>
         </StyledProductCard>
     )

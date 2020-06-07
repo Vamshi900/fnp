@@ -31,3 +31,18 @@ export const CardImage = styled.div`
     export const Content =styled.div`
     text-align: center;
     color: #000;`;
+
+    export const DiscountPercent = styled.span`
+    font-size:12px;
+    margin-right:10px;
+    color : #00994f;
+    font-weight:bold;
+    `;
+    export const ActualPrice = styled.span`
+    text-decoration: line-through;
+    `;
+    export const OfferWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;`;
+

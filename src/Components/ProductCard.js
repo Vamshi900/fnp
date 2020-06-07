@@ -4,10 +4,10 @@ import StarRatings from 'react-star-ratings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
-import { BestSeller, FavIcon, Tag, CardImage, Content } from './ProductCard.styled';
+import { BestSeller, FavIcon, Tag, CardImage, Content, DiscountPercent, OfferWrapper,ActualPrice } from './ProductCard.styled';
 
 const StyledProductCard = styled.div`
- position:realtive;
+ position:relative;
  background-color: #f1f1f1;
 flex: 0 1 calc(25% - 1em);
     padding: 6px;
@@ -56,12 +56,12 @@ function ProductCard(props) {
 
                         }
                     </div>
-                    <div>
-                        {props.product.discountPercentage ? <span className='offer'>{props.product.discountPercentage} % OFF</span> : null}
+                    <OfferWrapper>
+                        {props.product.discountPercentage ? <DiscountPercent className='offer'>{props.product.discountPercentage} % OFF</DiscountPercent> : null}
                         {
-                            props.product.discountPercentage ? <span className='actualPrice'>₹ {props.product.sellingPrice} </span> : null
+                            props.product.discountPercentage ? <ActualPrice className='actualPrice'>₹ {props.product.sellingPrice} </ActualPrice> : null
                         }
-                    </div>
+                    </OfferWrapper>
 
 
 
@@ -72,6 +72,7 @@ function ProductCard(props) {
                         name='rating'
                         starDimension="15px"
                         starSpacing="3px"
+                        
                     />
                     <span>{props.product.reviewCount} reviews</span>
                 </Content>

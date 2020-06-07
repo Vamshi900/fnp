@@ -50,7 +50,6 @@ export const CardImage = styled.div`
     margin-left:10px
     `;
    export const CardTitleText = styled.h3`
-   
-   font-size:15px
+   font-size:15px;
    margin: 0;`;
 

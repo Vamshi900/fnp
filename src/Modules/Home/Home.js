@@ -4,7 +4,7 @@ import ProductCard from '../../Components/ProductCard'
 import { pageReducer, productReducer } from './data/reducer';
 import { useFetch, useInfiniteScroll, useLazyLoading } from '../../Hooks/customHooks'
 import styled from 'styled-components';
-
+import './home.css';
 
 const HomeContainer = styled.div`
     display: flex;
@@ -72,21 +72,21 @@ function Home() {
     }
 
     if (products.data.length > 0) {
-        content = products.data.map((product, index) =>
+        let cards = products.data.map((product, index) =>
             <ProductCard
                 product={product}
                 id={product.sku + index}
             ></ProductCard>
 
         )
+        content = <ProductList className="cardWrapper">
+            {cards}
+        </ProductList>
     }
 
     return (
         <HomeContainer>
-
-            <ProductList className="cardWrapper">
-                {content}
-            </ProductList>
+            {content}
             <PageBottomBound id='page-bottom-boundary' ref={bottomBoundaryRef}></PageBottomBound>
         </HomeContainer>
     )

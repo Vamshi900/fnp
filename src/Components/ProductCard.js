@@ -10,6 +10,7 @@ const StyledProductCard = styled.div`
 @media (min-width: 40em) {
     &.card {
        max-width: calc(50% -  1em);
+       flex: 0 1 calc(50% - 1em);
     }
     max-width: calc(50% -  1em);
 }
@@ -18,7 +19,7 @@ const StyledProductCard = styled.div`
     &.card {
         max-width: calc(25% - 1em);
     }
-    max-width: calc(50% -  1em);
+}
  position:relative;
  background-color: #f1f1f1;
 flex: 0 1 calc(25% - 1em);
@@ -39,7 +40,7 @@ function ProductCard(props) {
             <Tag className='tag'>
                 {props.product.bestSeller ? <BestSeller className='bestSeller'>BEST SELLER</BestSeller> : null}
 
-                <FavIcon onClick={() => { setFav(!isFav) }}>  <FontAwesomeIcon
+                <FavIcon onClick={() => { setFav(!isFav) }} isFav={isFav}>  <FontAwesomeIcon
                     icon={faHeart}
                     onClick={() => setFav(!isFav)}
                 /></FavIcon>

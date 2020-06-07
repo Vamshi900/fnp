@@ -1,13 +1,21 @@
 import React from 'react'
+import styled from 'styled-components';
 
-function About(){
+const PageName = styled.h1`
+margin-top: 10vh;
+color: black`;
+
+const PageContet = styled.p`
+color: black;
+margin-top: 13vh;`;
+function About() {
     return (
-        <div>
-            <h1 className="font-bold text-2xl mb-3">About us</h1>
-            <p>
+        <>
+            <PageName className="font-bold text-2xl mb-3">About us</PageName>
+            <PageContet>
                 This is the about page content.
-            </p>
-        </div>
+            </PageContet>
+        </>
     )
 }
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // make API calls and pass the returned data via dispatch
 export const useFetch = (data, dispatch) => {
-  const url = "http://www.mocky.io/v2/5ed68221340000480106dae9";
+  const url = "https://www.mocky.io/v2/5ed68221340000480106dae9";
 
   useEffect(() => {
     dispatch({ type: 'FETCHING_PRODUCTS', loading: true, error: false })

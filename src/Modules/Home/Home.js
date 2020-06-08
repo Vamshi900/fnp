@@ -49,6 +49,11 @@ const PageBottomBound = styled.div`
     background: #fff;
     width: 100%;`;
 
+    const Error = styled.div`
+    color:black;
+    margin-top: 10vh;
+    `;
+
 function Home() {
     let content = null
     let bottomBoundaryRef = useRef(null);
@@ -61,11 +66,9 @@ function Home() {
     useInfiniteScroll(bottomBoundaryRef, pagerDispatch);
 
     if (products.error) {
-        content = <div>
-            <div className="">
-                There was an error please refresh or try again later.
-            </div>
-        </div>
+        content = <Error>
+            There was an error please refresh or try again later.
+        </Error>
     }
     if (products.loading) {
         content = <Loader></Loader>

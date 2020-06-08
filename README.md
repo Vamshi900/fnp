@@ -1,3 +1,13 @@
+## Deployment URl
+
+## Netlify https://festive-northcutt-398008.netlify.app/
+
+## ZIET 
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -30,15 +30,7 @@ justify-content: between;
 align:center;
 flex-direction:row;
 `;
-const Logo = styled.div`
-height: 20px;
-padding-left: 10px;
-line-height: 20px;
-&.Image {
-    max-height: 28px;
-    vertical-align: initial;
-}
-`;
+
 
 const Image = styled.img`
 max-width: 100%;

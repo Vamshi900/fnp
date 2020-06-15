@@ -7,19 +7,6 @@ import styled from 'styled-components';
 import { BestSeller, FavIcon, Tag, CardImage, Content, DiscountPercent, OfferWrapper, ActualPrice, Reviews, CardTitleText } from './ProductCard.styled';
 
 const StyledProductCard = styled.div`
-@media (min-width: 40em) {
-    &.card {
-       max-width: calc(50% -  1em);
-       flex: 0 1 calc(50% - 1em);
-    }
-    max-width: calc(50% -  1em);
-}
-
-@media (min-width: 60em) {
-    &.card {
-        max-width: calc(25% - 1em);
-    }
-}
  position:relative;
  background-color: #f1f1f1;
 flex: 0 1 calc(25% - 1em);
@@ -27,9 +14,18 @@ flex: 0 1 calc(25% - 1em);
     border-radius: 4px;
     margin: 0px 0.8% 0.8% 0px;
     transition: all 0.25s ease-in-out 0s;
-
-
-        
+    @media (min-width: 40em) {
+        &.card {
+           max-width: calc(30% -  1em);
+           flex: 0 1 calc(30% - 1em);
+        }
+\    }
+    
+    @media (min-width: 60em) {
+        &.card {
+            max-width: calc(25% - 1em);
+        }
+    }    
    `;
 
 
@@ -45,15 +41,15 @@ function ProductCard(props) {
                     onClick={() => setFav(!isFav)}
                 /></FavIcon>
             </Tag>
-            <a href={`${props.product.landingPage}`} target={'_blank'} className="styledCard">
+            <a href={`${props.product.landingPage}`} rel="noopener noreferrer" target={'_blank'} className="styledCard">
                 <CardImage style={{
                     'backgroundImage': `url('${props.product.imgSrc}')`,
                     'display': 'flex',
-                    'flex-direction': 'column',
-                    '-webkit-box-pack': 'end',
-                    'justify-content': 'flex-end',
+                    'flexDirection': 'column',
+                    'WebkitBoxPack': 'end',
+                    'justifyContent': 'flex-end',
                     'width': '100%',
-                    'line-height': 0,
+                    'lineHeight': 0,
                     'position': 'relative',
                     'height': '100px'
                 }}

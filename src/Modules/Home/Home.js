@@ -23,33 +23,15 @@ justify-content: center;
 flex-wrap: wrap;
 width: 100%;
 `;
-const ListItem = styled.li`
-display: inline-block;
-    width: calc(24.25%);
-    margin: 0px 0.8% 0.8% 0px;`;
 
-const StyledProductCard = styled(ProductCard)`
-background-color: #f1f1f1;
-width: 100px;
-margin: 10px;
-text-align: center;
-line-height: 75px;
-font-size: 30px;
-    display: flex;
-    min-height: 351px;
-    padding: 6px;
-    border-radius: 4px;
-    margin: 0px 0.8% 0.8% 0px;
-    transition: all 0.25s ease-in-out 0s;
-    background: rgb(255, 255, 255);`
-    ;
+
 const PageBottomBound = styled.div`
     border: 1px solid #fff;
     height: 10px;
     background: #fff;
     width: 100%;`;
 
-    const Error = styled.div`
+const Error = styled.div`
     color:black;
     margin-top: 10vh;
     `;
@@ -79,6 +61,7 @@ function Home() {
             <ProductCard
                 product={product}
                 id={product.sku + index}
+                key={product.sku + index}
             ></ProductCard>
 
         )

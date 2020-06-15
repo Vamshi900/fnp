@@ -60,6 +60,9 @@ const App = () => {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/">
+            <Home />
+          </Route>
         </Switch>
       </Container>
       <GlobalStyle />
